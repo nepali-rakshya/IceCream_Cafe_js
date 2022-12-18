@@ -1,3 +1,6 @@
+// THIS IS DONE USING CALLBACK AND NOW YOU CAN EASILY SEE THE
+// CALLBACK HELL
+
 let stocks = {
   fruits: ["strawberry", "grapes", "banana", "apple"],
   liquid: ["water", "ice"],
