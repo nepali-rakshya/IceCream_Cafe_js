@@ -5,43 +5,16 @@ let stocks = {
   toppings: ["chocolate", "sprinkles"],
 };
 
-// function abc() {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(console.log("I am happy"));
-//     }, 4000);
-//   });
-// }
+let is_shop_open = true;
 
-// async function order() {
-//   try {
-//     await abc();
-//   } catch (error) {
-//     console.log("This function doesn't exist", error);
-//   } finally {
-//     console.log("We are done");
-//   }
-// }
-
-// order();
-
-let timer = () => {
+function shop(time) {
   return new Promise((res, rej) => {
-    setTimeout(() => {
-      console.log("We will be going on");
-      res(console.log("I am first"));
-      //   console.log("It's gonna be confusing");
-    }, 5000);
+    if (is_shop_open) {
+      setTimeout(res, time);
+    } else {
+      rej(console.log("We are closed sir"));
+    }
   });
-};
-
-async function timerFlow(call_timer) {
-  console.log("I am first you know");
-  await timer();
-  console.log("Can I?");
-  console.log("Can You?");
-  call_timer();
-  console.log("Can We?");
 }
 
-timerFlow(timer);
+shop(2000);
